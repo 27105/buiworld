@@ -778,16 +778,16 @@ async function clipboard(text) {
                             },
                             {
                                 type: 0,
-                                name: settings.under ? "BLOCKED" : "Niggerify",
+                                name: settings.under ? "Retardify",
                                 callback: (passthrough)=>{
-                                    socket.emit("talk", passthrough.pub.name+" hey guess what, you're a nigger!")
+                                    socket.emit("talk", passthrough.pub.name+" hey guess what, you're a retard!")
                                 }
                             },
                             {
                                 type: 0,
-                                name: "Ask to KYS",
+                                name: "Ask to STFU",
                                 callback: (passthrough)=>{
-                                    socket.emit("talk", passthrough.pub.name+"(don't) kill yourself" + (Math.random()>0.5 ? " like a tranny." : " NOW!"));
+                                    socket.emit("talk", passthrough.pub.name+"Shut the fuck up" + (Math.random()>0.5 ? " cuz i do not like you." : " NOW!"));
                                 }
                             },
                         ]
@@ -800,7 +800,7 @@ async function clipboard(text) {
                         items: [
                             {
                                 type: 0,
-                                name: "Jewify",
+                                name: "Trollify",
                                 callback: (passthrough)=>{
                                     socket.emit("command", {command: "jewify", param: passthrough.id})
                                 }
