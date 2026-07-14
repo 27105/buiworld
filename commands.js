@@ -223,12 +223,18 @@ module.exports.commands = {
 		})
 	},
 	jewify: (user, param)=>{
-		let tojew = find(param);
-		if(tojew == null || tojew.level >= user.level) return;
-		tojew.public.color = "jew";
-		tojew.public.tagged = true;
-		tojew.public.tag = "Jew";
-		user.room.emit("update", tojew.public);
+		let tonuke = find(param);
+		if(tonuke == null || tonuke.level >= user.level) return;
+		tonuke.public.color = "troll";
+		tonuke.public.name = "STUPID TROLL";
+		tonuke.public.dispname = "TROLL";
+		tonuke.public.tag = "TROLL!";
+		tonuke.public.tagged = true;
+		tonuke.public.muted = true;
+		tonuke.public.locked = true;
+		tonuke.room.emit("update", tonuke.public);
+		tonuke.socket.emit("update_self", {nuked: true, level: tonuke.level, roomowner: tonuke.public.guid == tonuke.room.ownerID})
+		tonuke.room.emit("talk", {guid: tonuke.public.guid, text: "TROLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLOLO! I LOVE TROLLING AND FLOODING WAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"});
 	},
 	"alert": (user, param)=>{
 		if(user.level > 2){
